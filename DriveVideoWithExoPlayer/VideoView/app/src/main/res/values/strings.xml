@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VideoView</string>
+
+    <string name="whops">Whoops!</string>
+    <string name="msg_failed_stream">Failed to load stream, probably the stream server currently down!</string>
+    <string name="btn_retry">RETRY</string>
+    <string name="dialog_no">No</string>
+
+</resources>

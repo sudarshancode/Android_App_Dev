@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RecyclerViewProject</string>
+
+    <string-array name="movie_name">
+        <item>adven </item>
+        <item>awara </item>
+        <item>babu </item>
+        <item>bachchan </item>
+        <item>guru </item>
+        <item>harry </item>
+        <item>hero </item>
+        <item>kunmfu </item>
+        <item>layla </item>
+        <item>panther </item>
+        <item>swapno </item>
+        <item>woman </item>
+    </string-array>
+</resources>

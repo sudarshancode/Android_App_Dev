@@ -12,30 +12,39 @@
 
     <EditText
         android:id="@+id/editTextId1"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:background="#E28888"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="#5F5D5D"
+        android:textColor="@color/black"
+        android:hint="Enter Age "
         />
     <EditText
         android:id="@+id/editTextId2"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:background="#E28888"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="#5F5D5D"
+        android:textColor="@color/black"
+        android:hint="Enter Name "
         />
     <Button
         android:id="@+id/submitButtonId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
         android:text="Submit"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#E91E63"
+
         />
     <Button
         android:id="@+id/showButtonId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
         android:text="Show"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#2196F3"
         />
     <TextView
         android:id="@+id/textViewId"
@@ -43,6 +52,8 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:layout_marginTop="20dp"
+        android:text="hello"
+        android:textColor="@color/black"
         />
 
 </LinearLayout>

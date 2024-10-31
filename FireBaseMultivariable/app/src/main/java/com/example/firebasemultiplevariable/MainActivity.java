@@ -22,17 +22,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
-    EditText text1,text2;
-    Button submitButton,showButton;
+    EditText text1, text2;
+    Button submitButton, showButton;
     TextView textView;
     DatabaseReference databaseReference;
-    int id;
     String name;
+    int age;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,62 +40,52 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        text1=(EditText) findViewById(R.id.editTextId1);
-        text2=(EditText) findViewById(R.id.editTextId2);
-        submitButton=(Button) findViewById(R.id.submitButtonId);
-        showButton=(Button) findViewById(R.id.showButtonId);
 
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("MyDb");
-
-
+        text1 = findViewById(R.id.editTextId1);
+        text2 = findViewById(R.id.editTextId2);
+        submitButton = findViewById(R.id.submitButtonId);
+        showButton = findViewById(R.id.showButtonId);
+        textView = findViewById(R.id.textViewId);
 
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Person");
+
+
+        submitButton.setOnClickListener(view -> {
+            try {
+                age = Integer.parseInt(text1.getText().toString());
+                name = text2.getText().toString();
+
+                Person person = new Person(name, age);
+
+                databaseReference.setValue(person)
+                            .addOnSuccessListener(unused -> Toast.makeText(MainActivity.this, "On success", Toast.LENGTH_LONG).show())
+                            .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "On Failure", Toast.LENGTH_LONG).show());
+            } catch (NumberFormatException e) {
+                Toast.makeText(MainActivity.this, "Invalid age entered", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id=Integer.parseInt(text1.getText().toString());
-                name=text2.getText().toString();
-                HashMap hashMap=new HashMap();
-                hashMap.put("id",id);
-                hashMap.put("name",name);
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                databaseReference.child("User1").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(MainActivity.this,"On sucess",Toast.LENGTH_LONG).show();
+                        Person person=snapshot.getValue(Person.class);
+
+                        textView.setText("Name:"+person.name+"\n Age: "+person.age);
+
                     }
-                }).addOnFailureListener(new OnFailureListener() {
+
                     @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this,"On Failure",Toast.LENGTH_LONG).show();
+                    public void onCancelled(@NonNull DatabaseError error) {
+
                     }
                 });
             }
         });
 
-       showButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               databaseReference.child("User1").addValueEventListener(new ValueEventListener() {
-                   @Override
-                   public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       if(snapshot.exists()){
-                           Map<String, Object> map= (Map<String, Object>) snapshot.getValue();
-
-                           Object id=map.get("id");
-                           String name=map.get("name").toString();
-
-                           textView.setText(" "+id);
-                       }
-
-                   }
-
-                   @Override
-                   public void onCancelled(@NonNull DatabaseError error) {
-
-                   }
-               });
-           }
-       });
     }
 }
