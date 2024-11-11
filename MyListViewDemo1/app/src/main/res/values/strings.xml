@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MyListViewDemo1</string>
+
+    <string-array name="district_name">
+        <item>Alipurduar</item>
+        <item>Bankura</item>
+        <item>Bardhaman</item>
+        <item>Birbhum</item>
+        <item>Cooch Behar</item>
+        <item>Darjeeling</item>
+        <item>Dinajpur</item>
+        <item>Howrah</item>
+        <item>Jalpaiguri</item>
+        <item>Jhargram</item>
+        <item>Kolkata</item>
+        <item>Maldah</item>
+        <item>Nadia</item>
+
+    </string-array>
+</resources>

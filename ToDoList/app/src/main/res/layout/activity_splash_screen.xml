@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".SplashScreen">
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_marginLeft="25dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline_play_circle_filled_24"
+            />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How it "
+            android:textSize="20dp"
+            android:textColor="#4CAF50"
+            android:textStyle="italic"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="works"
+            android:layout_gravity="center_vertical"
+            android:textSize="22dp"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/first_banner"
+        />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:text="Manage Your Everyday Task List "
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/getStartedButtonId"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="#FF5722"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        />
+    <ProgressBar
+
+        android:id="@+id/progressBarId"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_gravity="center_horizontal"
+        android:progressTint="#FF5722"
+        android:progressBackgroundTint="#797676"
+        />
+</LinearLayout>

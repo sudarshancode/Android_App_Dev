@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:id="@+id/emailId"
+            android:layout_width="260dp"
+            android:hint="Email Id"
+            android:paddingLeft="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp"
+            android:layout_height="50dp"/>
+        <EditText
+            android:id="@+id/passwordId"
+            android:layout_width="260dp"
+            android:hint="Password"
+            android:paddingLeft="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="textPassword"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/submitbuttonId"
+            android:layout_width="260dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/black"
+            android:text="Submit"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

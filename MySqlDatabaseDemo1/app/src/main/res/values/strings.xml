@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MySqlDatabaseDemo1</string>
+    <string name="varchar_240">VARCHAR(240),</string>
+</resources>

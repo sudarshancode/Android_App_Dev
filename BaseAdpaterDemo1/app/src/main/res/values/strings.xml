@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Country Profile</string>
+
+    <string-array name="country_name">
+        <item>India</item>
+        <item>Bangladesh</item>
+        <item>Nepal</item>
+        <item>Bhutan</item>
+        <item>America</item>
+        <item>Germany</item>
+        <item>Arab</item>
+        <item>Indonesia</item>
+        <item>United Kingdom</item>
+        <item>Italy</item>
+        <item>Sri Lanka</item>
+        <item>China</item>
+    </string-array>
+</resources>
