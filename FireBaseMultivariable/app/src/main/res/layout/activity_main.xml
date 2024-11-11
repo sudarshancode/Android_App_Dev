@@ -35,9 +35,10 @@
         android:layout_height="50dp"
         android:text="Submit"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#E91E63"
+        android:backgroundTint="#F44336"
 
         />
+
     <Button
         android:id="@+id/showButtonId"
         android:layout_width="290dp"
@@ -45,6 +46,22 @@
         android:text="Show"
         android:layout_marginTop="20dp"
         android:backgroundTint="#2196F3"
+        />
+    <Button
+        android:id="@+id/updateButtonId"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:text="Update"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#21F340"
+        />
+    <Button
+        android:id="@+id/deleteButtonId"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:text="Delete"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#E91E63"
         />
     <TextView
         android:id="@+id/textViewId"

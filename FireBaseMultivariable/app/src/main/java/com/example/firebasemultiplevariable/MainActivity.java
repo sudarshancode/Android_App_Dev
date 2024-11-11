@@ -22,9 +22,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
     EditText text1, text2;
-    Button submitButton, showButton;
+    Button submitButton, showButton,updateButton,deleteButton;
     TextView textView;
     DatabaseReference databaseReference;
     String name;
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         text2 = findViewById(R.id.editTextId2);
         submitButton = findViewById(R.id.submitButtonId);
         showButton = findViewById(R.id.showButtonId);
+        updateButton=(Button) findViewById(R.id.updateButtonId);
+        deleteButton=(Button) findViewById(R.id.deleteButtonId);
         textView = findViewById(R.id.textViewId);
 
 
@@ -55,10 +60,11 @@ public class MainActivity extends AppCompatActivity {
             try {
                 age = Integer.parseInt(text1.getText().toString());
                 name = text2.getText().toString();
+                HashMap hashMap=new HashMap();
 
-                Person person = new Person(name, age);
-
-                databaseReference.setValue(person)
+                hashMap.put("age",age);
+                hashMap.put("name",name);
+                databaseReference.setValue(hashMap)
                             .addOnSuccessListener(unused -> Toast.makeText(MainActivity.this, "On success", Toast.LENGTH_LONG).show())
                             .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "On Failure", Toast.LENGTH_LONG).show());
             } catch (NumberFormatException e) {
@@ -72,11 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Map<String,Object> map=(Map<String, Object>) snapshot.getValue();
 
-                        Person person=snapshot.getValue(Person.class);
+                        Object age=map.get("age");
+                        String name= (String) map.get("name");
 
-                        textView.setText("Name:"+person.name+"\n Age: "+person.age);
-
+                        textView.setText("Name:"+name+"\nAge:"+age);
                     }
 
                     @Override
@@ -87,5 +94,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                age = Integer.parseInt(text1.getText().toString());
+                name = text2.getText().toString();
+                HashMap hashMap=new HashMap();
+
+                hashMap.put("age",age);
+                hashMap.put("name",name);
+
+                databaseReference.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(MainActivity.this,"Update Success",Toast.LENGTH_SHORT).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"Update Fail",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child("name").removeValue();
+            }
+        });
     }
 }
