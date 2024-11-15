@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BaseAdpaterDemo1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#9AE6DE</item>
+    </style>
+
+    <style name="Theme.BaseAdpaterDemo1" parent="Base.Theme.BaseAdpaterDemo1" />
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">#9AE6DE</item>
+        <item name="colorPrimaryDark">#9AE6DE</item>
+        <item name="colorAccent">#F41717</item>
+    </style>
+</resources>

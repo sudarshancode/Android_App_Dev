@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movie Hub</string>
+
+    <string-array name="movie_name">
+        <item>Awara</item>
+        <item>Bhootpori</item>
+        <item>Bindas</item>
+        <item>Black</item>
+        <item>Devi</item>
+        <item>Fida</item>
+        <item>Gen-Ami</item>
+        <item>Chaamp</item>
+        <item>100% Love</item>
+        <item>Mirza</item>
+        <item>Nandini</item>
+        <item>Dwitiyo Purush</item>
+        <item>Sakkhi</item>
+        <item>Villain</item>
+    </string-array>
+</resources>

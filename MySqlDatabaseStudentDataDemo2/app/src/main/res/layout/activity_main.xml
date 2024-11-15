@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/student"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:orientation="vertical"
+       android:layout_marginTop="40dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:paddingTop="50dp"
+       android:paddingBottom="50dp"
+       android:background="@drawable/internal_frame"
+       >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:gravity="center_horizontal"
+           android:layout_height="wrap_content">
+           <EditText
+               android:id="@+id/nameTextId"
+               android:inputType="text"
+               android:layout_width="280dp"
+               android:layout_height="48dp"
+               android:hint="Enter Your Name"
+               android:textColorHint="#7676A5"
+               android:paddingLeft="10dp"
+               android:paddingRight="20dp"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:background="@drawable/rounded_text_field"
+               android:textColor="@color/black"
+               />
+           <EditText
+               android:id="@+id/ageTextId"
+               android:inputType="numberDecimal"
+               android:layout_marginTop="20dp"
+               android:layout_width="280dp"
+               android:layout_height="48dp"
+               android:hint="Enter Your Age"
+               android:textColorHint="#7676A5"
+               android:paddingLeft="10dp"
+               android:paddingRight="20dp"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:background="@drawable/rounded_text_field"
+               android:textColor="@color/black"
+               />
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:gravity="center_horizontal"
+           android:layout_marginTop="30dp"
+           android:layout_height="wrap_content">
+
+           <Button
+               android:id="@+id/submitButtonId"
+               android:layout_width="280dp"
+               android:layout_height="55dp"
+               android:backgroundTint="#FF0000"
+               android:textSize="20dp"
+               android:text="Submit"/>
+           <Button
+               android:id="@+id/displayButtonId"
+               android:layout_marginTop="10dp"
+               android:layout_width="280dp"
+               android:layout_height="55dp"
+               android:textSize="20dp"
+               android:backgroundTint="#0050FF"
+               android:text="Display"/>
+
+       </LinearLayout>
+
+
+   </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.SearchBarDemo1" parent="Base.Theme.SearchBarDemo1" />
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">#FA2727</item>
+        <item name="colorPrimaryDark">#FA2727</item>
+        <item name="colorAccent">#FA2727</item>
+    </style>
+</resources>
